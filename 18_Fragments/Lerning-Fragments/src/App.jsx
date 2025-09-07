@@ -1,25 +1,33 @@
+import FoodItems from "./components/FoodItems";
+import ErrorMassage from "./components/ErrorMassage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import "./App.css";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
+import { useState } from "react";
 
 function App() {
-    
-  let foodItems =  ['Dal', 'Fruits', 'Green Veg', 'Milk', 'Juices', 'Dry Fruits'];
-  let emptymsg = 
-  foodItems.length === 0 ? <h3>I am still hungry.</h3>: null; 
+  let [foodItems, setFoodItems] = useState([]);
 
-return  (
-  <center>
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      event.target.value = "";
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItems(newItems);
+    }
+  };
+
+  return (
     <>
-       <h1>Healthy Food</h1>
-       {emptymsg}
-  <ul className="list-group">
-  {foodItems.map((item) =>(
-    <li key={item} className="list-group-item">{item}</li>
-  ))}
-</ul>
-  </> 
-  </center>
-)
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
+        <ErrorMassage items={foodItems}></ErrorMassage>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+    </>
+  );
 }
 
-export default App
+export default App;
