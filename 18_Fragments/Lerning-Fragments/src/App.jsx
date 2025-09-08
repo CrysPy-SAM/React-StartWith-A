@@ -1,32 +1,36 @@
-import FoodItems from "./components/FoodItems";
-import ErrorMassage from "./components/ErrorMassage";
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
 import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
-import { useState } from "react";
 
 function App() {
-  let [foodItems, setFoodItems] = useState([]);
+  const [foodItems, setFoodItems] = useState([]);
 
-  const onKeyDown = (event) => {
+  const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      let newFoodItem = event.target.value;
+      const newFoodItem = event.target.value.trim();
+
+      if (!newFoodItem) return; // prevent empty items
+
+      setFoodItems((prevItems) => [...prevItems, newFoodItem]);
       event.target.value = "";
-      let newItems = [...foodItems, newFoodItem];
-      setFoodItems(newItems);
     }
   };
 
   return (
-    <>
-      <Container>
-        <h1 className="food-heading">Healthy Food</h1>
-        <FoodInput handleKeyDown={onKeyDown}></FoodInput>
-        <ErrorMassage items={foodItems}></ErrorMassage>
-        <FoodItems items={foodItems}></FoodItems>
-      </Container>
-    </>
+    <Container>
+      <h1 className="food-heading text-center my-3">🥗 Healthy Food List</h1>
+
+      <FoodInput handleKeyDown={handleKeyDown} />
+
+      <ErrorMessage items={foodItems} />
+
+      <FoodItems items={foodItems} />
+    </Container>
   );
 }
 
