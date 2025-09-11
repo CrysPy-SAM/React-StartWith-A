@@ -1,4 +1,4 @@
-function Todoitem({ todoName, todoDate }) {
+function TodoItem({ todoName, todoDate }) {
   return (
     <div className="container">
       <div className="row kg-row">
@@ -14,4 +14,4 @@ function Todoitem({ todoName, todoDate }) {
   );
 }
 
-export default Todoitem;
+export default TodoItem;
