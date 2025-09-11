@@ -6,22 +6,3 @@
   color: white;
   border-radius: 5px ;
 }
-
-.buttonsContainer {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.display{
-    margin: 10px;
-    width: 175px;
-    font-size: 25px;
-}
-
-.button{
-    width: 45px;
-    height: 45px;
-    margin: 3px;
-}
