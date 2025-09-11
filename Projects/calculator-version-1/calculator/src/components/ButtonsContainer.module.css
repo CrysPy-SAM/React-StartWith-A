@@ -1,12 +1,52 @@
 .buttonsContainer {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px;
 }
 
 .button {
-  width: 45px;
-  height: 45px;
-  margin: 3px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #f2f2f2;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2),
+              -2px -2px 6px rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background: #e0e0e0;
+}
+
+.button:active {
+  transform: scale(0.95);
+  background: #d6d6d6;
+}
+
+/* Operators */
+.operator {
+  background: #ff9500;
+  color: white;
+}
+
+.operator:hover {
+  background: #e08900;
+}
+
+/* Equals special */
+.equals {
+  background: #34c759;
+  color: white;
+}
+
+.equals:hover {
+  background: #28a745;
+}
+
+/* Zero button spans two columns */
+.zero {
+  grid-column: span 2;
 }

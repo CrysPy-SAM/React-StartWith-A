@@ -1,14 +1,28 @@
-import styles from "./Display.module.css";
+import styles from "./ButtonsContainer.module.css";
 
-const buttonsContainer = () =>{
-    return(
+const ButtonsContainer = () => {
+  const buttons = [
+    "C", "1", "2", "+",
+    "-", "3", "4", "5",
+    "*", "6", "7", "8",
+    "/", "9", "=", ".",
+    "0"
+  ];
+
+  return (
     <div className={styles.buttonsContainer}>
-        <button className={styles.button}>C</button>
-        <button className={styles.button}>D</button>
-        <button className={styles.button}>E</button>
-        <button className={styles.button}>F</button>
-      </div>
-    );
-}
+      {buttons.map((btn, index) => (
+        <button
+          key={index}
+          className={`${styles.button} 
+            ${/[+\-*/=]/.test(btn) ? styles.operator : ""} 
+            ${btn === "0" ? styles.zero : ""}`}
+        >
+          {btn}
+        </button>
+      ))}
+    </div>
+  );
+};
 
-export default buttonsContainer; 
+export default ButtonsContainer;

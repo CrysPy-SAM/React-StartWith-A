@@ -1,8 +1,10 @@
 .calculator {
-  border: 1px solid rgba(90, 90, 90, 0.386);
-  width: 200px;
+  width: 280px;
   margin: 50px auto;
   padding: 20px;
-  color: white;
-  border-radius: 5px ;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15),
+              -4px -4px 10px rgba(255, 255, 255, 0.8);
 }
