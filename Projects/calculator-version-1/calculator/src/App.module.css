@@ -1,0 +1,12 @@
+.calculator {
+  width: 250px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+}
+
+.buttonsContainer {
+  margin-top: 10px;
+}
