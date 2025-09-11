@@ -1,12 +1,27 @@
 .calculator {
-  width: 250px;
+  border: 1px solid rgba(90, 90, 90, 0.386);
+  width: 200px;
   margin: 50px auto;
   padding: 20px;
-  background: #222;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px ;
 }
 
 .buttonsContainer {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.display{
+    margin: 10px;
+    width: 175px;
+    font-size: 25px;
+}
+
+.button{
+    width: 45px;
+    height: 45px;
+    margin: 3px;
 }
