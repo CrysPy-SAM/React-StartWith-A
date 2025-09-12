@@ -46,7 +46,6 @@
   background: #28a745;
 }
 
-/* Zero button spans two columns */
 .zero {
   grid-column: span 2;
 }

@@ -11,4 +11,4 @@ const FoodInput = ({ handleKeyDown }) => {
   );
 };
 
-export default FoodInput; 
+export default FoodInput;
