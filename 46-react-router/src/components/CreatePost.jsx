@@ -9,6 +9,7 @@ const CreatePost = () => {
   const postBodyElement = useRef();
   const reactionsElement = useRef();
   const tagsElement = useRef();
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
