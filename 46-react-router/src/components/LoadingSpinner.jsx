@@ -1,9 +1,15 @@
-const WelcomeMessage = ({ onGetPostsClick }) => {
+const LoadingSpinner = () => {
   return (
-    <center className="welcome-message">
-      <h1>There are no posts</h1>
-    </center>
+    <div className="d-flex justify-content-center spinner">
+      <div
+        className="spinner-border"
+        role="status"
+        style={{ width: "5rem", height: "5rem" }}
+      >
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
   );
 };
 
-export default WelcomeMessage;
+export default LoadingSpinner;
